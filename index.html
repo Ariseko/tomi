@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <title>Арт-тест 🎨</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="screen active" id="startScreen">
+    <h1>Вы хотите пройти тест?</h1>
+    <button onclick="startTest()">Начать</button>
+  </div>
+
+  <form id="quizForm">
+
+    <div class="screen" id="q1">
+      <p>1. Как думаете, насколько мы вас любим?</p>
+      <input type="checkbox" name="q1" value="a"> очень сильно<br>
+      <input type="checkbox" name="q1" value="b"> нормис<br>
+      <input type="checkbox" name="q1" value="c"> не любите (<br>
+      <button type="button" onclick="nextQuestion(1)">Далее</button>
+    </div>
+
+    <div class="screen" id="q2">
+      <p>2. Какого числа празднуют День Защитников Отечества?</p>
+      <input type="checkbox" name="q2" value="a"> 19 ноября<br>
+      <input type="checkbox" name="q2" value="b"> 7 мая<br>
+      <input type="checkbox" name="q2" value="c"> 23 февраля<br>
+      <button type="button" onclick="nextQuestion(2)">Далее</button>
+    </div>
+
+    <div class="screen" id="q3">
+      <p>3. Когда вы в последний раз кушали?</p>
+      <input type="checkbox" name="q3" value="a"> Сегодня<br>
+      <input type="checkbox" name="q3" value="b"> Вчера кашу с кофе<br>
+      <input type="checkbox" name="q3" value="c"> В прошлом году<br>
+      <button type="button" onclick="nextQuestion(3)">Далее</button>
+    </div>
+
+    <div class="screen" id="q4">
+      <p>4. Ты христианин?</p>
+      <input type="checkbox" name="q4" value="a"> Теперь да<br>
+      <input type="checkbox" name="q4" value="b"> Наверное<br>
+      <input type="checkbox" name="q4" value="c"> Пока что нет<br>
+      <button type="button" onclick="showResult()">Завершить</button>
+    </div>
+  </form>
+
+  <div class="screen" id="result">
+    <div id="resultText"></div>
+    <button onclick="location.reload()">Пройти снова</button>
+  </div>
+</div>
+
+<div class="confetti" id="confettiContainer"></div>
+
+</body>
+</html>

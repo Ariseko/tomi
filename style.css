@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('https://i.gifer.com/7gRx.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.screen {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, p {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+    margin: 10px;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+    accent-color: #9B30FF;
+}
+
+input[type="checkbox"]:checked {
+    transform: scale(1.2);
+}
+
+button {
+    background-color: #9B30FF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #7d25cc;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+#resultText {
+    font-size: 18px;
+    color: #222;
+}
+
+@keyframes fadeInPop {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.result-celebration {
+    animation: fadeInPop 1s ease-out forwards;
+    color: #8A2BE2;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FFC0CB;
+    animation: fall 3s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-20px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
